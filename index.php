@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="en">
+
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title><?= $data['title'] ?? 'Naslov' ?></title>
-    <link rel="stylesheet" href="<?= URLROOT ?>/assets/css/home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <title>Document</title>
 </head>
 
 <body>
-    <?php include_once __DIR__ . '/layout/nav.php'; ?>
+     <?php include_once __DIR__ . '/views/layout/nav.php'; ?>
     <main class="main-home">
         <section class="text-section">
             <h1>„Samo radom na sebi postaješ bolji, zato upiši kurs i pronađi posao online.“</h1>
-            <input type="button" value="Pogledaj kurseve" class="button-course" onclick="location.href='<?= URLROOT ?>/courses'">
+            <input type="button" value="Pogledaj kurseve" class="button-course" onclick="location.href">
         </section>
 
         <section>
@@ -22,7 +23,7 @@
                     <p>ime polaznika</p>
                     <br>
                     <p>opis kursa iz baze povucen</p>
-                    <input type="button" value="Pogledaj kurs" class="button-course" onclick="location.href='<?= URLROOT ?>/courses'">
+                    <input type="button" value="Pogledaj kurs" class="button-course" onclick="location.href">
                 </div>
 
                 <div class="review-cards-1 glass-panel">
@@ -30,7 +31,7 @@
                     <p>ime polaznika</p>
                     <br>
                     <p>opis kursa iz baze povucen</p>
-                    <input type="button" value="Pogledaj kurs" class="button-course" onclick="location.href='<?= URLROOT ?>/courses'">
+                    <input type="button" value="Pogledaj kurs" class="button-course" onclick="location.href">
                 </div>
 
                 <div class="review-cards-1 glass-panel">
@@ -38,7 +39,7 @@
                     <p>ime polaznika</p>
                     <br>
                     <p>opis kursa iz baze povucen</p>
-                    <input type="button" value="Pogledaj kurs" class="button-course" onclick="location.href='<?= URLROOT ?>/courses'">
+                    <input type="button" value="Pogledaj kurs" class="button-course" onclick="location.href">
                 </div>
 
             </div>
@@ -73,10 +74,10 @@
             </div>
 
             <div class="about-image">
-                <img src="<?= URLROOT ?>/assets/img/photo.png" alt="O nama">
+                <img src="assets/img/photo.png" alt="O nama">
             </div>
         </div>
     </section>
-    <?php include_once __DIR__ . '/layout/footer.php'; ?>
+     <?php include_once __DIR__ . '/views/layout/footer.php'; ?>
 </body>
 </html>
