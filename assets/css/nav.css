@@ -1,0 +1,48 @@
+/* Nav container */
+.user-nav {
+    background-color: #181818;
+    border: 1px solid #BF40BF;
+    border-radius: 12px;
+    width: 50%;
+    height: 90px;
+    margin: 20px auto 0 auto;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+/* Logo */
+.user-nav img.logo {
+    height: 130px;
+    width: 130px;
+}
+
+/* Linkovi container */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* razmak između linkova */
+}
+
+/* Linkovi */
+.user-nav a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 6px; /* razmak ikonica <-> text */
+    font-size: 16px;
+}
+
+/* Korpa i ostale ikone */
+.user-nav i {
+    font-size: 18px;
+}
+
+/* Hover */
+.user-nav a:hover {
+    color: #BF40BF;
+}
