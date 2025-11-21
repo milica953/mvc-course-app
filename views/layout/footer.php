@@ -17,6 +17,7 @@
             <p>PIB: 123456789</p>
             <p>MB:  12345678</p>
             <p>Adresa Beograd</p>
+            <p>Kontakt: 061 123456</p>
         </div>
 
         <div class="footer-section">

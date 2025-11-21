@@ -46,3 +46,10 @@
 .user-nav a:hover {
     color: #BF40BF;
 }
+#name-of-the-user{
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 17px;
+    margin: 15px;
+}
