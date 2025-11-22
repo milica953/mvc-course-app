@@ -24,8 +24,8 @@
 
         <div class="nav-links">
             <a href="courses/list">Kursevi</a>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i> Korpa</a>
             <?php if (!empty($_SESSION['uloga_id']) && $_SESSION['uloga_id'] == 1): ?>
+                <a href="/mvc-course-app/views/user/shoping_cart.php"><i class="fa-solid fa-cart-shopping"></i> Korpa</a>
                 <a href="/user/login">Moji kursevi</a>
             <?php endif; ?>
 
