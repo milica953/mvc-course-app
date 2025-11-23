@@ -30,6 +30,9 @@ body {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
 }
 
 .button-course:hover {
@@ -139,4 +142,56 @@ body {
     max-width: 480px;
     border-radius: 14px;
     object-fit: cover;
+}
+
+.main-home {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px;
+    gap: 40px; /* Dodaje prostor između sekcija */
+}
+
+
+.text-section {
+    flex: 1; /* Zauzima dostupan prostor na levoj strani */
+    max-width: 50%;
+}
+
+
+
+.review-container {
+    flex: 1; 
+    max-width: 50%;
+}
+
+.review-panel {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    min-height: 400px; 
+}
+
+.review-card {
+    display: none; 
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.151);
+    border: 1px solid #BF40BF;
+    border-radius: 50px;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+    
+    opacity: 0;
+    transition: opacity 1s ease-in-out; 
+}
+
+
+.review-card.active {
+    display: block; 
+    opacity: 1; 
 }

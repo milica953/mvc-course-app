@@ -1,0 +1,29 @@
+body{
+    background-color: #181818;
+    color: white;
+}
+.header{
+    color: #BF40BF;
+    text-align: center;
+    margin: 20px;
+}
+.course-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.course-item{
+    border: 1px solid black;
+    margin: 10px;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background-color: #5c155c;
+}
+.course-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}

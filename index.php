@@ -5,47 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/home.css">
+    <script src="assets/js/rewiew.js"></script>
     <title>Document</title>
 </head>
 
+
 <body>
-     <?php include_once __DIR__ . '/views/layout/nav.php'; ?>
-    <main class="main-home">
+    <?php
+    include_once __DIR__ . '/views/layout/nav.php';
+    require_once __DIR__ . '/core/env.php';
+    loadEnv(__DIR__ . '/.env');
+    include_once __DIR__ . '/config/database.php';
+
+    // Izvlačenje prvih 20 recenzija
+    $upit = "SELECT 
+            recenzija.kurs_id,
+            recenzija.korisnik_id,
+            recenzija.opis,
+            kurs.naziv,
+            korisnik.ime
+        FROM recenzija
+        INNER JOIN kurs ON recenzija.kurs_id = kurs.kurs_id
+        INNER JOIN korisnik ON recenzija.korisnik_id = korisnik.korisnik_id
+        LIMIT 10";
+
+    $stmt = $pdo->prepare($upit);
+    $stmt->execute();
+    $recenzije = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+
+    ?>
+        <main class="main-home">
+        <!-- Sekcija sa tekstom i linkom (leva strana) -->
         <section class="text-section">
             <h1>„Samo radom na sebi postaješ bolji, zato upiši kurs i pronađi posao online.“</h1>
-            <input type="button" value="Pogledaj kurseve" class="button-course" onclick="location.href">
+            <a href="/mvc-course-app/views/course/course.php" class="button-course">
+                <p>Pogledaj kurseve</p>
+            </a>
         </section>
 
-        <section>
-            <div class="rewiew-panel">
-                <div class="review-cards-1 glass-panel">
-                    <p>ime kursa</p>
-                    <p>ime polaznika</p>
-                    <br>
-                    <p>opis kursa iz baze povucen</p>
-                    <input type="button" value="Pogledaj kurs" class="button-course" onclick="location.href">
-                </div>
-
-                <div class="review-cards-1 glass-panel">
-                    <p>ime kursa</p>
-                    <p>ime polaznika</p>
-                    <br>
-                    <p>opis kursa iz baze povucen</p>
-                    <input type="button" value="Pogledaj kurs" class="button-course" onclick="location.href">
-                </div>
-
-                <div class="review-cards-1 glass-panel">
-                    <p>ime kursa</p>
-                    <p>ime polaznika</p>
-                    <br>
-                    <p>opis kursa iz baze povucen</p>
-                    <input type="button" value="Pogledaj kurs" class="button-course" onclick="location.href">
-                </div>
-
+        <!-- Sekcija sa recenzijama (desna strana) -->
+        <section class="review-container">
+            <div class="review-panel" id="reviewPanel">
+                <?php foreach ($recenzije as $index => $recenzija): ?>
+                    <!-- Dodat 'review-fade' klasa za tranziciju -->
+                    <div class="review-card glass-panel review-fade" <?php echo $index === 0 ? 'style="display:block;"' : ''; ?>>
+                        <p><strong><?php echo $recenzija['naziv']; ?></strong></p>
+                        <p><?php echo $recenzija['ime']; ?></p>
+                        <br>
+                        <p><?php echo $recenzija['opis']; ?></p>
+                    </div>
+                <?php endforeach; ?>
             </div>
-        </section>
 
+            <!-- Kontrole su uklonjene da bi se recenzije automatski smenjivale bez interakcije korisnika -->
+        </section>
     </main>
+
 
 
     <section class="about-section">
@@ -78,6 +96,7 @@
             </div>
         </div>
     </section>
-     <?php include_once __DIR__ . '/views/layout/footer.php'; ?>
+    <?php include_once __DIR__ . '/views/layout/footer.php'; ?>
 </body>
+
 </html>

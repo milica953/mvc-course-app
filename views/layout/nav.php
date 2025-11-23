@@ -26,7 +26,7 @@
             <a href="/mvc-course-app/views/course/course.php">Kursevi</a>
             <?php if (!empty($_SESSION['uloga_id']) && $_SESSION['uloga_id'] == 1): ?>
                 <a href="/mvc-course-app/views/user/shoping_cart.php"><i class="fa-solid fa-cart-shopping"></i> Korpa</a>
-                <a href="/user/login">Moji kursevi</a>
+                <a href="/mvc-course-app/views/user/my_courses.php">Moji kursevi</a>
             <?php endif; ?>
 
             <?php if (!empty($_SESSION['uloga_id'])): ?>
@@ -42,9 +42,6 @@
 
         </div>
     </nav>
-
-
-
 </body>
 
 </html>

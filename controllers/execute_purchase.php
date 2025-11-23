@@ -44,7 +44,7 @@ $stmt->execute();
 $kupovina_id = $pdo->lastInsertId();
 
 // 3. Dodajemo kurseve korisniku (moji_kursevi)
-$sql = "INSERT IGNORE INTO moji_kursevi (korisnik_id, kurs_id, datum_kupovine)
+$sql = "INSERT IGNORE INTO moji_kursevi (korisnik_id, kurs_id, datum_kupovine_kursa)
         VALUES (:korisnik_id, :kurs_id, NOW())";
 
 $stmt = $pdo->prepare($sql);
