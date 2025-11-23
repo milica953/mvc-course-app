@@ -1,0 +1,112 @@
+body{
+    background-color: #181818;
+}
+.card-holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.card {
+    border: 1px solid black;
+    margin: 10px;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+
+}
+
+.card p {
+    font-size: 14px;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.card .price {
+    font-weight: bold;
+    color: #eb58eb;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.card form {
+    width: 100%;
+    text-align: center;
+}
+
+.button {
+    background-color: #7c217c;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.card p[style*="color:red"] {
+    color: #d32f2f;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.button.disabled {
+    background-color: #aaa;
+    
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.button.disabled:hover {
+    background-color: #aaa;
+    }
+
+.card-action {
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.button {
+    padding: 10px 25px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #490e2e;
+}
+
+.button.disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.button.disabled:hover {
+    background-color: #aaa;
+}

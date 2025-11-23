@@ -18,10 +18,7 @@
     loadEnv(__DIR__ . '../../../.env');
     include '../../Config/database.php';
     include_once __DIR__ . '../../layout/nav.php';
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
-    }
-
+    include_once __DIR__ . '../../../controllers/sesion_checker.php';
 
     $korisnik_id = $_SESSION['korisnik_id'];
 
@@ -50,26 +47,35 @@
                 <tr>
                     <th>Kurs</th>
                     <th>Cena</th>
+                    <th>Upravljanje</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 $suma = 0;
                 foreach ($stavka_korpe as $stavka) {
-                    $suma += $$stavka['cena'];
+                    $suma += $stavka['cena'];
                 ?>
                     <tr>
                         <form action="/mvc-course-app/controllers/update_shoping_cart.php" method="POST">
                             <input type="hidden" name="id" value="<?php echo $stavka['id'] ?>">
                             <td>
-                                <a href="/mvc-course-app/controllers/delete_shoping_cart.php?id=<?php echo $stavka['id'] ?>">Obriši kurs iz korpe</a>
+                                <?php echo $stavka['naziv'] ?>
                             </td>
+                            <td><?php echo $stavka['cena'] ?> RSD</td>
+                            <td><a href="/mvc-course-app/controllers/delete_shoping_cart.php?id=<?php echo $stavka['id'] ?>">Obriši kurs iz korpe</a></td>
                         </form>
                     </tr>
                 <?php } ?>
                 <tr>
                     <td colspan="3"><strong>Ukupno za plaćanje:</strong></td>
                     <td colspan="2"><?php echo $suma ?> RSD</td>
+                    <td>
+                        <form action="/mvc-course-app/controllers/execute_purchase.php" method="POST">
+                        <button type="submit">Izvrši kupovinu</button>
+                    </form>
+
+                    </td>
                 </tr>
             </tbody>
         </table>
