@@ -38,7 +38,8 @@ Statistika i izveštavanje
 ![admin2](https://github.com/user-attachments/assets/a4621b11-67c9-4c65-9e33-a48a2a418306)
 
 <img width="1920" height="1080" alt="login" src="https://github.com/user-attachments/assets/f3aae799-da54-4dfb-87c3-e6e8c9eed651" />
-![DB](https://github.com/user-attachments/assets/00a9cb2e-674f-4535-b577-42d06aeec8e8)
+
+![DB](https://github.com/user-attachments/assets/bf13426b-6fab-4441-9c06-c0dddebea4db)
 
 
 
