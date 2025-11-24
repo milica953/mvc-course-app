@@ -9,9 +9,11 @@ Najpopularniji kursevi (po broju kupovina)
 Broj registrovanih korisnika
 
 Kontrola pristupa:
+
  Anonimni korisnik:
 
-    Može da vidi sve kurseve, ali ne i da kupuje, za to mora da bude ulogovan.
+    Može pregledati dostupne kurseve
+    Ne može kupovati kurseve (potrebna registracija)
 
 Registrovani korisnik:
 
@@ -24,10 +26,20 @@ Admin:
     Aktivira/deaktivira korisnike
     Gleda statistiku (dashboard)
     Može da uveze/izveze podatke
-  
+
+Statistika i izveštavanje
+  Broj prodatih kurseva po mesecima  
+  Najpopularniji kursevi (po broju kupovina)
+  Broj registrovanih korisnika
 
 
 ![admin1](https://github.com/user-attachments/assets/05fd821b-9172-49bb-8ded-84c367f70295)
+
 ![admin2](https://github.com/user-attachments/assets/a4621b11-67c9-4c65-9e33-a48a2a418306)
+
 <img width="1920" height="1080" alt="login" src="https://github.com/user-attachments/assets/f3aae799-da54-4dfb-87c3-e6e8c9eed651" />
+![DB](https://github.com/user-attachments/assets/00a9cb2e-674f-4535-b577-42d06aeec8e8)
+
+
+
 ![shoping](https://github.com/user-attachments/assets/df33e82f-e582-49d2-ac67-92de4b01b6e3)
