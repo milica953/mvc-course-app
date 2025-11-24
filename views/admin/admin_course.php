@@ -14,31 +14,47 @@
 
 <body>
     <?php
-
     session_start();
-
-    // Učitaj env i bazu
     require_once __DIR__ . '../../../core/env.php';
     loadEnv(__DIR__ . '../../../.env');
     include __DIR__ . '../../../config/database.php';
 
+    // Broj kurseva po stranici
+    $po_stranici = 8;
 
+    // Trenutna stranica iz GET parametra
+    $stranica = isset($_GET['stranica']) ? (int)$_GET['stranica'] : 1;
+    if ($stranica < 1) $stranica = 1;
 
+    // Prebroj ukupno kurseva
+    $stmt = $pdo->query("SELECT COUNT(*) FROM kurs");
+    $ukupno_kurseva = $stmt->fetchColumn();
+
+    // Izračunaj ukupno stranica
+    $ukupno_stranica = ceil($ukupno_kurseva / $po_stranici);
+
+    // Offset za SQL
+    $offset = ($stranica - 1) * $po_stranici;
+
+    // Učitaj kurseve za trenutnu stranicu
     $sql = "
-            SELECT 
-                kurs.kurs_id, 
-                kurs.naziv AS kurs_naziv, 
-                kurs.opis, 
-                kurs.cena, 
-                kategorija.naziv AS kategorija_naziv
-            FROM kurs 
-            INNER JOIN kategorija ON kurs.kategorija_id = kategorija.kategorija_id
-        ";
+    SELECT 
+        kurs.kurs_id, 
+        kurs.naziv AS kurs_naziv, 
+        kurs.opis, 
+        kurs.cena, 
+        kategorija.naziv AS kategorija_naziv
+    FROM kurs 
+    INNER JOIN kategorija ON kurs.kategorija_id = kategorija.kategorija_id
+    LIMIT :limit OFFSET :offset
+";
     $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':limit', $po_stranici, PDO::PARAM_INT);
+    $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
     $stmt->execute();
     $kursevi = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
     ?>
+
     <div class="layout">
         <?php include __DIR__ . '/../layout/admin_nav.php'; ?>
 
@@ -77,10 +93,22 @@
                             </a>
 
                         </div>
+
                     </div>
                 <?php endforeach; ?>
+
+            </div>
+            <div class="paginacija">
+                <?php for ($i = 1; $i <= $ukupno_stranica; $i++): ?>
+                    <?php if ($i == $stranica): ?>
+                        <div><?= $i ?></div>
+                    <?php else: ?>
+                    <a href="/mvc-course-app/views/admin/admin_course.php?stranica=<?= $i ?>"><?= $i ?></a>
+                    <?php endif; ?>
+                <?php endfor; ?>
             </div>
         </div>
+
     </div>
 </body>
 

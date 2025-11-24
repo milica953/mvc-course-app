@@ -129,3 +129,8 @@
     border-color: #4b0082;
     box-shadow: 0 0 0 2px rgba(75, 0, 130, 0.15);
 }
+a { text-decoration: none; }
+    .paginacija { margin-top: 1em; }
+    .paginacija a,
+    .paginacija div { display: inline-block; border: 1px solid silver; border-radius: 1em; padding: 0.25em 0.5em; margin: 0 2px; }
+    .paginacija div { background-color: #ccc; }

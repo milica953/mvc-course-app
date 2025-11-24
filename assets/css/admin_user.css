@@ -42,3 +42,8 @@ a p:hover {
 .info h2 {
     margin-bottom: 20px;
 }
+a { text-decoration: none; }
+    .paginacija { margin-top: 1em; text-align: center; }
+    .paginacija a,
+    .paginacija div { display: inline-block; border: 1px solid silver; border-radius: 1em; padding: 0.25em 0.5em; margin: 0 2px; }
+    .paginacija div { background-color: grey; }
