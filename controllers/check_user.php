@@ -34,8 +34,12 @@
             $_SESSION['prezime'] = $rezultat['prezime'];
             $_SESSION['uloga_id'] = $rezultat['uloga_id'];
             
-            /*dodaj za admina da prebaci na njegovu stranicu*/ 
-            header("Location:../index.php");
+            
+            if($rezultat['uloga_id'] == 2){
+                header("Location: /mvc-course-app/views/admin/admin_home.php");
+                exit();
+            } else
+                header("Location:../index.php");
         }
 
     }else{

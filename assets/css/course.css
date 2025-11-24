@@ -1,112 +1,114 @@
-body{
+/* GLOBAL */
+body {
     background-color: #181818;
-}
-.card-holder {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 10px;
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+/* FILTERI */
+.filters {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    padding: 20px 30px 0 30px;
+}
+
+.filters input,
+.filters select {
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    font-size: 15px;
+    flex: 1;
+    outline: none;
+    background: #222;
+    color: #fff;
+    transition: .2s ease;
+}
+
+.filters input:focus,
+.filters select:focus {
+    border-color: #7c217c;
+    box-shadow: 0 0 4px rgba(124, 33, 124, 0.6);
+}
+
+/* GRID LAYOUT */
+.card-holder {
+    width: 100%;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 30px;
+}
+
+/* KARTICA */
 .card {
-    border: 1px solid black;
-    margin: 10px;
-    width: auto;
-    height: auto;
-    padding: 10px;
-    text-align: center;
+    background: #242424;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+    transition: .25s ease;
     color: white;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.65);
 }
 
+/* NASLOV */
 .card h1 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    text-align: center;
-    color: white;
-
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #d69ef7;
 }
 
-.card p {
-    font-size: 14px;
-    text-align: center;
-    margin: 5px 0;
-}
-
-.card .price {
+/* CENA */
+.price {
+    font-size: 18px;
     font-weight: bold;
     color: #eb58eb;
-    font-weight: bold;
-    font-size: 16px;
     margin-bottom: 15px;
 }
 
-.card form {
-    width: 100%;
-    text-align: center;
+/* OPIS */
+.card p {
+    font-size: 15px;
+    color: #ccc;
+    line-height: 1.5;
 }
 
-.button {
-    background-color: #7c217c;
-    color: white;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.2s;
-}
-
-.button:hover {
-    background-color: #45a049;
-}
-
-.card p[style*="color:red"] {
-    color: #d32f2f;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.button.disabled {
-    background-color: #aaa;
-    
-    cursor: not-allowed;
-    opacity: 0.7;
-}
-
-.button.disabled:hover {
-    background-color: #aaa;
-    }
-
+/* DUGMAD */
 .card-action {
-    margin-top: 15px;
-    width: 100%;
-    text-align: center;
+    margin-top: 20px;
+    display: flex;
 }
 
 .button {
-    padding: 10px 25px;
-    border-radius: 8px;
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    background: #7c217c;
+    color: #fff;
     border: none;
-    font-size: 14px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: .2s ease;
 }
 
 .button:hover {
-    background-color: #490e2e;
+    background: #490e2e;
 }
 
 .button.disabled {
-    background-color: #aaa;
+    background: #555;
     cursor: not-allowed;
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 .button.disabled:hover {
-    background-color: #aaa;
+    background: #555;
 }

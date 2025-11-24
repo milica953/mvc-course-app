@@ -1,0 +1,54 @@
+/* admin_nav.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5; 
+}
+
+/* OVO JE GLAVNI KONTEJNER: SIDEBAR + SADRZAJ */
+.layout {
+    display: flex; /* Koristi Flexbox */
+    min-height: 100vh; /* Zauzima celu visinu ekrana */
+    width: 100%; /* Zauzima celu širinu */
+}
+
+
+.admin-sidebar { /* Koristite novu klasu */
+    width: 220px;
+    background-color: #343a40; /* Tamnija boja */
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+.admin-sidebar .header {
+    background-color: #BF40BF; /* Ljubičasta boja za header */
+    color: white;
+    padding: 15px 20px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.admin-sidebar a {
+    display: block;
+    color: white; /* Boja teksta u navigaciji */
+    padding: 12px 20px;
+    text-decoration: none;
+    margin-bottom: 2px;
+}
+
+.admin-sidebar a:hover {
+    background-color: #495057; /* Tamnija hover boja */
+}
+
+/* Stil za glavni sadržaj */
+.content {
+    flex-grow: 1; /* Zauzima sav preostali prostor */
+    padding: 20px;
+    background-color: white; /* Svetla pozadina za sadržaj */
+}
+.span{
+    padding: 20px;
+    color: #BF40BF;
+}

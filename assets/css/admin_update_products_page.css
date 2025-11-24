@@ -1,0 +1,100 @@
+/* GLOBAL */
+body {
+    background-color: #181818;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* LAYOUT */
+.layout {
+    display: flex;
+}
+
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+/* MAIN FORM */
+main.update-product {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #242424;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+main.update-product h1 {
+    color: #d69ef7;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* LABEL */
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* INPUTS */
+.select, input[type="text"], textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background: #222;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.select:focus, input[type="text"]:focus, textarea:focus {
+    border-color: #7c217c;
+    box-shadow: 0 0 5px rgba(124, 33, 124, 0.5);
+}
+
+/* DUGMAD */
+.form-actions {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.button.save {
+    background-color: #7c217c;
+    color: #fff;
+}
+
+.button.save:hover {
+    background-color: #490e2e;
+}
+
+.button.cancel {
+    background-color: #555;
+    color: #fff;
+}
+
+.button.cancel:hover {
+    background-color: #333;
+}
+
+/* TEXTAREA STYLING */
+textarea {
+    resize: vertical;
+}

@@ -1,0 +1,131 @@
+/* Glavni layout */
+.layout {
+    display: flex;
+    min-height: 100vh;
+    background: #f3f4f6;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Sadržaj */
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+.content h1 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Grid za kartice */
+.card-holder {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+/* Kartica */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0px 6px 16px rgba(0,0,0,0.08);
+    transition: 0.25s ease;
+    border: 1px solid #eee;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.12);
+}
+
+/* Naslov kursa */
+.card h1 {
+    font-size: 22px;
+    color: #4b0082;
+    margin-bottom: 12px;
+}
+
+/* Tekst */
+.card p {
+    font-size: 15px;
+    color: #555;
+    margin: 6px 0;
+}
+
+/* Akcije (dugmići) */
+.actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Dugme Edit */
+.edit-button {
+    padding: 8px 14px;
+    background: #4b0082;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.edit-button:hover {
+    background: #6520b5;
+}
+
+/* Dugme Delete */
+.delete-button {
+    padding: 8px 14px;
+    background: #e63946;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.delete-button:hover {
+    background: #c71f30;
+}
+/* FILTERI WRAPPER */
+.filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* SEARCH INPUT */
+.filters input {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.filters input:focus {
+    border-color: #4b0082;
+    box-shadow: 0 0 0 2px rgba(75, 0, 130, 0.15);
+}
+
+/* SELECT FILTER */
+.filters select {
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.filters select:focus {
+    border-color: #4b0082;
+    box-shadow: 0 0 0 2px rgba(75, 0, 130, 0.15);
+}
