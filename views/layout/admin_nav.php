@@ -6,10 +6,11 @@ if (session_status() === PHP_SESSION_NONE) {
 $currentPage = basename($_SERVER['PHP_SELF']);
 ?>
 
-<nav class="admin-sidebar"> <div class="header">
+<nav class="admin-sidebar">
+    <div class="header">
         <h1>Admin Dashboard</h1>
     </div>
-    
+
     <?php if (!empty($_SESSION['uloga_id'])): ?>
         <div class="user-info">
             <a href="/mvc-course-app/controllers/log_out.php">LOG OUT</a>
@@ -19,14 +20,47 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         </div>
     <?php endif; ?>
 
-    <a href="/mvc-course-app/views/admin/admin_home.php">HOME</a>
+    <!-- STATISTIKA (dropdown / submenu) -->
+    <div class="submenu">
+        <a href="/mvc-course-app/views/admin/admin_home.php"
+           class="<?= $currentPage == 'admin_home.php' ? 'active' : '' ?>">
+            Statistika
+        </a>
+        <div class="submenu-items">
+            <a href="/mvc-course-app/views/admin/admin_home.php"
+               class="<?= $currentPage == 'stat_overview.php' ? 'active' : '' ?>">
+                Overview
+            </a>
+            <a href="/mvc-course-app/views/admin/stat_sold_courses.php"
+               class="<?= $currentPage == 'stat_sold_courses.php' ? 'active' : '' ?>">
+                Prodati kursevi
+            </a>
+            <a href="/mvc-course-app/views/admin/stat_popular.php"
+               class="<?= $currentPage == 'stat_popular.php' ? 'active' : '' ?>">
+                Najpopularniji
+            </a>
+            <a href="/mvc-course-app/views/admin/stat_unpopular.php"
+               class="<?= $currentPage == 'stat_unpopular.php' ? 'active' : '' ?>">
+                Najmanje popularni
+            </a>
+            <a href="/mvc-course-app/views/admin/stat_users.php"
+               class="<?= $currentPage == 'stat_users.php' ? 'active' : '' ?>">
+                Registrovani korisnici
+            </a>
+        </div>
+    </div>
 
+    <!-- Ostale sekcije -->
     <a href="/mvc-course-app/views/admin/admin_course.php"
-        <?= $currentPage == 'course.php' ? 'class="active"' : '' ?>>
+        <?= $currentPage == 'admin_course.php' ? 'class="active"' : '' ?>>
         Kursevi
     </a>
 
-    <a href="/mvc-course-app/views/admin/admin_user.php">Korisnici</a>
-    <a href="#">Statistika</a>
+    <a href="/mvc-course-app/views/admin/admin_user.php"
+        <?= $currentPage == 'admin_user.php' ? 'class="active"' : '' ?>>
+        Korisnici
+    </a>
+
     <a href="#">Uvoz/Izvoz</a>
 </nav>
+

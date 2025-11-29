@@ -8,17 +8,16 @@ function filterCourses() {
 
     cards.forEach(card => {
         const title = card.querySelector("h1").innerText.toLowerCase();
-        
-        // Pronađi kategoriju unutar <p class="category">
         const categoryElem = card.querySelector(".category");
-        const category = categoryElem ? categoryElem.innerText.replace("Kategorija:", "").trim().toLowerCase() : "";
+        const category = categoryElem ? categoryElem.innerText.trim().toLowerCase() : "";
 
         const matchesSearch = title.includes(searchValue);
-        const matchesCategory = categoryValue === "all" || category.includes(categoryValue);
+        const matchesCategory = categoryValue === "all" ? true : category === categoryValue;
 
         card.style.display = (matchesSearch && matchesCategory) ? "block" : "none";
     });
 }
 
+// Event listeneri
 searchInput.addEventListener("keyup", filterCourses);
 categoryFilter.addEventListener("change", filterCourses);

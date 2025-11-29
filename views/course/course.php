@@ -24,7 +24,7 @@
     echo "ENV HOST: " . $_ENV['DB_HOST'];
 
 
-    $po_stranici = 6;
+    $po_stranici = 24;
 
     // Trenutna stranica iz GET parametra
     $stranica = isset($_GET['stranica']) ? (int)$_GET['stranica'] : 1;
@@ -75,19 +75,22 @@
     $stmt->bindParam(':korisnik_id', $_SESSION['korisnik_id']);
     $stmt->execute();
     $stavke_korpe = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $kategorije = [];
+    $stmtKat = $pdo->query("SELECT naziv FROM kategorija ORDER BY naziv");
+    $kategorije = $stmtKat->fetchAll(PDO::FETCH_COLUMN);
+
     ?>
     <div class="filters">
         <input
             type="text"
             id="searchInput"
             placeholder="Pretraga kurseva...">
-
         <select id="categoryFilter">
             <option value="all">Sve kategorije</option>
-            <?php foreach ($kursevi as $kurs): ?>
-                <option value="<?php echo htmlspecialchars($kurs['kategorija_naziv']); ?>">
-                    <?php echo htmlspecialchars($kurs['kategorija_naziv']); ?>
-                </option>
+            <?php
+            foreach ($kategorije as $kat): ?>
+                <option value="<?= htmlspecialchars($kat); ?>"><?= htmlspecialchars($kat); ?></option>
             <?php endforeach; ?>
         </select>
     </div>
@@ -97,7 +100,7 @@
         <?php foreach ($kursevi as $kurs): ?>
             <div class="card">
                 <h1><?php echo htmlspecialchars($kurs['kurs_naziv']); ?></h1>
-                <p class="category"><?php echo htmlspecialchars($kurs['kategorija_naziv']); ?></p>
+            <p class="category"><?= htmlspecialchars($kurs['kategorija_naziv']); ?></p>
                 <p class="price"><?php echo number_format($kurs['cena'], 2); ?> RSD</p>
                 <p><?php echo htmlspecialchars($kurs['opis']); ?></p>
 

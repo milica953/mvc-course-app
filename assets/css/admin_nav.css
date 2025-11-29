@@ -52,3 +52,22 @@ body {
     padding: 20px;
     color: #BF40BF;
 }
+.submenu {
+display: flex;
+flex-direction: column;
+}
+.submenu > a {
+cursor: pointer;
+}
+.submenu-items {
+display: none;
+flex-direction: column;
+padding-left: 15px;
+}
+.submenu.open .submenu-items {
+display: flex;
+}
+.submenu-items a {
+font-size: 14px;
+margin: 3px 0;
+}
