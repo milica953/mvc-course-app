@@ -119,48 +119,66 @@ new Chart(ctxSales, {
             }
         }
     },
-    plugins: [ChartDataLabels] // <-- aktivacija plugin-a
+    plugins: [ChartDataLabels] 
 });
 
 // --- Bar chart: prihod po mesecima ---
-    const canvasRevenue = document.getElementById('monthlyRevenueChart');
-    const months = JSON.parse(canvasRevenue.dataset.months);
-    const revenues = JSON.parse(canvasRevenue.dataset.revenues);
-    const ctxRevenue = canvasRevenue.getContext('2d');
+const canvasRevenue = document.getElementById('monthlyRevenueChart');
+const months = JSON.parse(canvasRevenue.dataset.months);
+const revenues = JSON.parse(canvasRevenue.dataset.revenues);
+const ctxRevenue = canvasRevenue.getContext('2d');
 
-    new Chart(ctxRevenue, {
-        type: 'bar',
-        data: {
-            labels: months,
-            datasets: [{
-                label: 'Prihod (RSD)',
-                data: revenues,
-                backgroundColor: '#ff9800',
-                borderRadius: 6
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: { display: false },
-                title: {
-                    display: true,
-                    text: 'Prihod po mesecima (ova godina)'
-                },
-                
+new Chart(ctxRevenue, {
+    type: 'bar',
+    data: {
+        labels: months,
+        datasets: [{
+            label: 'Prihod (RSD)',
+            data: revenues,
+            backgroundColor: '#ff9800',
+            borderRadius: 6
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { display: false },
+            title: {
+                display: true,
+                text: 'Prihod po mesecima (ova godina)'
             },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: {
-                        // Prikaz u hiljadama npr: 1k, 2k
-                        callback: function(value) {
-                            return value.toLocaleString();
-                        }
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        return context.dataset.label + ': ' + context.parsed.y.toLocaleString() + ' RSD';
+                    }
+                }
+            },
+            datalabels: { 
+                anchor: 'end',
+                align: 'end',
+                formatter: function(value) {
+                    return value.toLocaleString();
+                },
+                color: '#000',
+                font: {
+                    weight: 'bold',
+                    size: 12
+                }
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    callback: function(value) {
+                        return value.toLocaleString();
                     }
                 }
             }
         }
-    });
+    },
+    plugins: [ChartDataLabels] 
+});
 
 });

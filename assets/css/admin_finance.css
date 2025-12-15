@@ -20,15 +20,6 @@ h1 {
     gap: 30px;
     justify-content: center;
 }
-.number-of-courses-card{
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 20px;
-    width: 250px;
-    font-family: Arial, sans-serif;
-    margin: 20px;
-}
 
 .filter-card {
     background: #1e1e2f;
@@ -101,4 +92,37 @@ h1 {
 
 .reset-btn:hover {
     background: #e53935;
+}
+.stat-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    width: 250px;
+    text-align: center;
+}
+
+.stat-card h4 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.stat-card .stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f6feb;
+}
+.bar{
+    width: 600px;
+    height: auto;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    border-radius: 12px;
+}
+
+/* Canvas da zauzima punu širinu kartice */
+.chart-card canvas {
+    width: 100% !important;
+    height: 100% !important;
 }
