@@ -38,7 +38,6 @@
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         $activeUsers = (int)$result['ukupan_broj_aktivnih_korisnika_u_sistemu'];
 
-
         // podaci iz baze o deaktiviranim korisnicima
         $sql = "
             SELECT 

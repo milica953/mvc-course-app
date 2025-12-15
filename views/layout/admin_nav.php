@@ -31,21 +31,17 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                class="<?= $currentPage == 'stat_overview.php' ? 'active' : '' ?>">
                 Overview
             </a>
-            <a href="/mvc-course-app/views/admin/stat_sold_courses.php"
-               class="<?= $currentPage == 'stat_sold_courses.php' ? 'active' : '' ?>">
-                Prodati kursevi
+            <a href="/mvc-course-app/views/admin/admin_user_stats.php"
+               class="<?= $currentPage == 'admin_user_stats.php' ? 'active' : '' ?>">
+                kursevi
             </a>
             <a href="/mvc-course-app/views/admin/stat_popular.php"
                class="<?= $currentPage == 'stat_popular.php' ? 'active' : '' ?>">
-                Najpopularniji
+                finansije
             </a>
             <a href="/mvc-course-app/views/admin/stat_unpopular.php"
                class="<?= $currentPage == 'stat_unpopular.php' ? 'active' : '' ?>">
-                Najmanje popularni
-            </a>
-            <a href="/mvc-course-app/views/admin/stat_users.php"
-               class="<?= $currentPage == 'stat_users.php' ? 'active' : '' ?>">
-                Registrovani korisnici
+                korisnici
             </a>
         </div>
     </div>
