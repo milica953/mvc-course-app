@@ -32,15 +32,11 @@ Statistika i izveštavanje
   Najpopularniji kursevi (po broju kupovina)
   Broj registrovanih korisnika
 
-
-![admin1](https://github.com/user-attachments/assets/05fd821b-9172-49bb-8ded-84c367f70295)
-
-![admin2](https://github.com/user-attachments/assets/a4621b11-67c9-4c65-9e33-a48a2a418306)
-
-<img width="1920" height="1080" alt="login" src="https://github.com/user-attachments/assets/f3aae799-da54-4dfb-87c3-e6e8c9eed651" />
-
-![DB](https://github.com/user-attachments/assets/bf13426b-6fab-4441-9c06-c0dddebea4db)
+<img width="1917" height="930" alt="image" src="https://github.com/user-attachments/assets/b6ad9ebc-23a9-41bf-b07d-939ecbcf6b12" />
+<img width="1913" height="928" alt="image" src="https://github.com/user-attachments/assets/03775e9b-a4ef-4c68-a1c0-42f2dffe165d" />
+<img width="1915" height="927" alt="image" src="https://github.com/user-attachments/assets/ada63d77-d39c-4de6-a0f8-72777fd42810" />
 
 
 
-![shoping](https://github.com/user-attachments/assets/df33e82f-e582-49d2-ac67-92de4b01b6e3)
+
+![shoping](https://github.com/user-attachments/assets/df33e82f-e582-49d2-ac67-92de4b0
