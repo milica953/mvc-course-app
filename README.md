@@ -39,4 +39,4 @@ Statistika i izveštavanje
 
 
 
-![shoping](https://github.com/user-attachments/assets/df33e82f-e582-49d2-ac67-92de4b0
+
