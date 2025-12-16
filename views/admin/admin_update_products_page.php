@@ -78,7 +78,7 @@
                 <div class="form-actions">
                     <input type="submit" value="Snimi" class="button save">
                     <input type="button" value="Odustani" class="button cancel" 
-                        onclick="window.location.href='mvc-course-app/views/admin/admin_course.php';">
+                        onclick="window.location.href='/mvc-course-app/views/admin/admin_course.php';">
                 </div>
             </form>
         </main>

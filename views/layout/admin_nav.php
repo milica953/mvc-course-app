@@ -35,10 +35,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                class="<?= $currentPage == 'admin_finance.php' ? 'active' : '' ?>">
                 finansije
             </a>
-            <a href="/mvc-course-app/views/admin/stat_unpopular.php"
-               class="<?= $currentPage == 'stat_unpopular.php' ? 'active' : '' ?>">
-                korisnici
-            </a>
+            
         </div>
     </div>
 
@@ -53,6 +50,6 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         Korisnici
     </a>
 
-    <a href="#">Uvoz/Izvoz</a>
+    
 </nav>
 
